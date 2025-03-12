@@ -18,7 +18,7 @@ interface AnimatedGridPatternProps {
   repeatDelay?: number
 }
 
-export default function AnimatedGridPattern({
+export const AnimatedGridPattern = ({
   width = 40,
   height = 40,
   x = -1,
@@ -29,7 +29,7 @@ export default function AnimatedGridPattern({
   maxOpacity = 0.5,
   duration = 4,
   ...props
-}: AnimatedGridPatternProps) {
+}: AnimatedGridPatternProps) => {
   const id = useId()
   const containerRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
