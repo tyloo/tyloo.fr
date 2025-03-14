@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tyloo Portfolio Website
+
+![Portfolio Preview](/public/preview.jpg)
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. This website showcases my professional experience, projects, and skills as a Senior Software Engineer.
+
+## Features
+
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI**: Clean and professional interface using Shadcn UI components
+- **Dark/Light Mode**: Theme switching with system preference detection
+- **Sections**:
+  - Hero section with animated grid pattern
+  - About section with profile information
+  - Experience timeline showcasing professional journey
+  - Projects showcase with live demos and GitHub links
+- **SEO Optimized**: Meta tags and Open Graph images for better sharing
+
+## Technologies
+
+- **Framework**: [Next.js](https://nextjs.org/) (v15.3)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (v5)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) with Radix UI primitives
+- **Icons**: [Lucide React](https://lucide.dev/) and [React Icons](https://react-icons.github.io/react-icons/)
+- **Animations**: CSS animations with Tailwind
+- **Package Manager**: [pnpm](https://pnpm.io/)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/) with [Zod](https://zod.dev/) validation
+- **Development Tools**: ESLint, Prettier
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- pnpm (v8 or higher recommended)
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/tyloo/tyloo.fr.git
+   cd tyloo.fr
+   ```
+
+2. Install dependencies
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server
+   ```bash
+   pnpm dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To start the production server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+- `/app`: Next.js app directory with pages and layouts
+- `/components`: React components organized by feature
+  - `/ui`: Reusable UI components from Shadcn UI
+- `/lib`: Utility functions and data files
+- `/public`: Static assets like images and resume
+- `/hooks`: Custom React hooks
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To customize this portfolio for your own use:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Update personal information in `/lib` directory files
+2. Replace images in `/public` directory
+3. Modify component content in `/components` directory
+4. Update metadata in `/app/layout.tsx`
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is open source and available under the MIT License.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+Julien 'Tyloo' Bonvarlet
+- LinkedIn: [linkedin.com/in/julien-bonvarlet](https://linkedin.com/in/julien-bonvarlet/)
+- GitHub: [github.com/tyloo](https://github.com/tyloo)
