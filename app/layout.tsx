@@ -1,6 +1,7 @@
 import { Footer } from '@/components/footer'
 import { Navbar } from '@/components/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Source_Code_Pro } from 'next/font/google'
 import './globals.css'
@@ -28,6 +29,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
