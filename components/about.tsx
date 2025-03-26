@@ -1,3 +1,4 @@
+import { AnimatedButton } from '@/components/ui/animated-button'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { socials } from '@/lib/socials'
@@ -7,7 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { HTMLAttributes } from 'react'
 import { FaGithub } from 'react-icons/fa6'
-import { AnimatedGradientButton } from './ui/animated-gradient-button'
 
 export const About = () => (
   <section id='about' className='relative px-6 pt-24'>
@@ -31,9 +31,9 @@ export const About = () => (
             sharing knowledge with the developer community.
           </p>
           <div className='flex flex-wrap items-center justify-start gap-4'>
-            <AnimatedGradientButton href={socials.resume} variant='slate' className='!text-sm'>
+            <AnimatedButton href={socials.resume} variant='blue' openInNewTab>
               <Download className='mr-2 !h-4 !w-4' /> Download CV
-            </AnimatedGradientButton>
+            </AnimatedButton>
 
             <Button asChild className='rounded-full'>
               <Link href={socials.github} rel='noopener noreferrer' target='_blank'>

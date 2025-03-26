@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 import Link from 'next/link'
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 const buttonVariants = cva(
   'group inline-flex w-full items-center justify-center rounded-full font-medium transition-all sm:w-auto',
@@ -12,6 +12,7 @@ const buttonVariants = cva(
       variant: {
         default:
           'bg-gradient-to-tr from-zinc-300/20 via-zinc-400/30 to-transparent hover:from-zinc-300/30 hover:via-zinc-400/40 hover:to-transparent dark:from-zinc-300/5 dark:via-zinc-400/20 dark:hover:from-zinc-300/10 dark:hover:via-zinc-400/30',
+        dark: 'bg-gradient-to-tr from-black/20 via-black/30 to-transparent hover:from-black/30 hover:via-black/40 hover:to-transparent dark:from-black/20 dark:via-black/30 dark:hover:from-black/30 dark:hover:via-black/40',
         slate:
           'bg-gradient-to-tr from-slate-300/20 via-slate-400/30 to-transparent hover:from-slate-300/30 hover:via-slate-400/40 hover:to-transparent dark:from-slate-300/5 dark:via-slate-400/20 dark:hover:from-slate-300/10 dark:hover:via-slate-400/30',
         gray: 'bg-gradient-to-tr from-gray-300/20 via-gray-400/30 to-transparent hover:from-gray-300/30 hover:via-gray-400/40 hover:to-transparent dark:from-gray-300/5 dark:via-gray-400/20 dark:hover:from-gray-300/10 dark:hover:via-gray-400/30',
@@ -60,45 +61,81 @@ const buttonVariants = cva(
   }
 )
 
-interface AnimatedGradientButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+const gradientColors = {
+  default: ['oklch(0.92 0.02 240)', 'oklch(0.23 0.02 240)', 'oklch(0.92 0.02 240)'],
+  dark: ['oklch(0.0 0.0 0)', 'oklch(0.23 0.02 240)', 'oklch(0.0 0.0 0)'],
+  slate: ['oklch(0.89 0.02 240)', 'oklch(0.23 0.02 240)', 'oklch(0.89 0.02 240)'],
+  gray: ['oklch(0.87 0.02 240)', 'oklch(0.24 0.02 240)', 'oklch(0.87 0.02 240)'],
+  neutral: ['oklch(0.91 0.02 240)', 'oklch(0.24 0.02 240)', 'oklch(0.91 0.02 240)'],
+  stone: ['oklch(0.85 0.02 40)', 'oklch(0.19 0.02 40)', 'oklch(0.85 0.02 40)'],
+  red: ['oklch(0.8 0.15 25)', 'oklch(0.4 0.15 25)', 'oklch(0.8 0.15 25)'],
+  orange: ['oklch(0.82 0.12 45)', 'oklch(0.42 0.12 45)', 'oklch(0.82 0.12 45)'],
+  amber: ['oklch(0.88 0.15 80)', 'oklch(0.48 0.15 80)', 'oklch(0.88 0.15 80)'],
+  yellow: ['oklch(0.97 0.15 100)', 'oklch(0.57 0.15 100)', 'oklch(0.97 0.15 100)'],
+  lime: ['oklch(0.92 0.15 125)', 'oklch(0.42 0.15 125)', 'oklch(0.92 0.15 125)'],
+  green: ['oklch(0.88 0.15 145)', 'oklch(0.38 0.15 145)', 'oklch(0.88 0.15 145)'],
+  emerald: ['oklch(0.88 0.12 165)', 'oklch(0.38 0.12 165)', 'oklch(0.88 0.12 165)'],
+  teal: ['oklch(0.88 0.1 185)', 'oklch(0.38 0.1 185)', 'oklch(0.88 0.1 185)'],
+  cyan: ['oklch(0.9 0.1 200)', 'oklch(0.4 0.1 200)', 'oklch(0.9 0.1 200)'],
+  sky: ['oklch(0.88 0.1 220)', 'oklch(0.38 0.1 220)', 'oklch(0.88 0.1 220)'],
+  blue: ['oklch(0.85 0.1 240)', 'oklch(0.35 0.1 240)', 'oklch(0.85 0.1 240)'],
+  indigo: ['oklch(0.82 0.15 260)', 'oklch(0.32 0.15 260)', 'oklch(0.82 0.15 260)'],
+  violet: ['oklch(0.85 0.15 280)', 'oklch(0.35 0.15 280)', 'oklch(0.85 0.15 280)'],
+  purple: ['oklch(0.85 0.15 300)', 'oklch(0.35 0.15 300)', 'oklch(0.85 0.15 300)'],
+  fuchsia: ['oklch(0.88 0.15 320)', 'oklch(0.38 0.15 320)', 'oklch(0.88 0.15 320)'],
+  pink: ['oklch(0.85 0.15 340)', 'oklch(0.35 0.15 340)', 'oklch(0.85 0.15 340)'],
+  rose: ['oklch(0.88 0.15 10)', 'oklch(0.38 0.15 10)', 'oklch(0.88 0.15 10)']
+}
+
+interface AnimatedButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   href: string
-  children: React.ReactNode
+  children: ReactNode
   className?: string
   openInNewTab?: boolean
 }
 
-export function AnimatedGradientButton({
+export function AnimatedButton({
   href,
   children,
   variant,
   size,
   className,
-  openInNewTab = true
-}: AnimatedGradientButtonProps) {
+  openInNewTab = false
+}: AnimatedButtonProps) {
   const linkProps = openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
   return (
-    <span className='relative inline-block overflow-hidden rounded-full p-[1.5px]'>
+    <GradientBorder variant={variant}>
+      <Link
+        href={href}
+        {...linkProps}
+        className={cn(buttonVariants({ variant, size }), 'border-input border', className)}
+      >
+        {children}
+      </Link>
+    </GradientBorder>
+  )
+}
+
+interface GradientBorderProps {
+  children: ReactNode
+  className?: string
+  variant?: VariantProps<typeof buttonVariants>['variant']
+}
+
+export function GradientBorder({ children, className, variant = 'default' }: GradientBorderProps) {
+  const [startColor, middleColor, endColor] = gradientColors[variant as keyof typeof gradientColors]
+
+  return (
+    <span className={cn('relative inline-block overflow-hidden rounded-full p-0.5', className)}>
       <span
         className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite]'
         style={{
-          background: 'conic-gradient(from 90deg at 50% 50%, #E2E8F0 0%, #1E293B 50%, #E2E8F0 100%)'
+          background: `conic-gradient(from 90deg at 50% 50%, ${startColor} 0%, ${middleColor} 50%, ${endColor} 100%)`
         }}
       />
-      <div className='inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white text-xs font-medium backdrop-blur-3xl dark:bg-gray-950'>
-        <Link
-          href={href}
-          {...linkProps}
-          className={cn(
-            buttonVariants({ variant, size }),
-            'border-input border-[1px] text-gray-900 dark:text-white',
-            className
-          )}
-        >
-          {children}
-        </Link>
+      <div className='inline-flex h-full w-full items-center justify-center rounded-full bg-white backdrop-blur-3xl dark:bg-gray-950'>
+        {children}
       </div>
     </span>
   )
