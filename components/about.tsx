@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { HTMLAttributes } from 'react'
 import { FaGithub } from 'react-icons/fa6'
+import { AnimatedGradientButton } from './ui/animated-gradient-button'
 
 export const About = () => (
   <section id='about' className='relative px-6 pt-24'>
@@ -29,18 +30,15 @@ export const About = () => (
             Vue.js, and cloud architecture. I&apos;m passionate about creating elegant solutions to complex problems and
             sharing knowledge with the developer community.
           </p>
-          <div className='flex flex-wrap justify-start gap-4'>
+          <div className='flex flex-wrap items-center justify-start gap-4'>
+            <AnimatedGradientButton href={socials.resume} variant='slate' className='!text-sm'>
+              <Download className='mr-2 !h-4 !w-4' /> Download CV
+            </AnimatedGradientButton>
+
             <Button asChild className='rounded-full'>
               <Link href={socials.github} rel='noopener noreferrer' target='_blank'>
                 <FaGithub />
                 View Github
-              </Link>
-            </Button>
-
-            <Button asChild variant='outline' className='rounded-full'>
-              <Link href={socials.resume} rel='noopener noreferrer' target='_blank'>
-                <Download />
-                Download CV
               </Link>
             </Button>
           </div>

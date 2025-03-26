@@ -1,9 +1,11 @@
 import { AnimatedGridPattern } from '@/components/ui/animated-grid-pattern'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { socials } from '@/lib/socials'
 import { cn } from '@/lib/utils'
-import { CircleArrowDown, Zap } from 'lucide-react'
+import { ArrowDownIcon, Download, Zap } from 'lucide-react'
 import Link from 'next/link'
+import { AnimatedGradientButton } from './ui/animated-gradient-button'
 
 export const Hero = () => (
   <div className='relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-6'>
@@ -31,9 +33,13 @@ export const Hero = () => (
       </p>
       <p className='mt-6 text-[17px] md:text-lg'>Let&apos;s create something amazing together! 🚀</p>
       <div className='mt-12 flex items-center justify-center gap-4'>
+        <AnimatedGradientButton href={socials.resume} variant='slate' className='!text-sm'>
+          <Download className='mr-2 !h-4 !w-4' /> Download CV
+        </AnimatedGradientButton>
+
         <Button asChild size='lg' className='rounded-full text-base'>
           <Link href='#about'>
-            See What I Do <CircleArrowDown className='ml-2 !h-5.5 !w-5.5' />
+            See What I Do <ArrowDownIcon className='!h-4 !w-4' />
           </Link>
         </Button>
       </div>
