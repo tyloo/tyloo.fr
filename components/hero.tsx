@@ -39,7 +39,7 @@ export const Hero = () => (
 
         <Button asChild size='lg' className='rounded-full text-base'>
           <Link href='#about'>
-            See What I Do <ArrowDownIcon className='!h-4 !w-4' />
+            Who am I? <ArrowDownIcon className='!h-4 !w-4' />
           </Link>
         </Button>
       </div>
