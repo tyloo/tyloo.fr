@@ -40,41 +40,49 @@ export const ProjectCard = ({
   liveUrl?: string;
   githubUrl?: string;
 }) => (
-  <div className="group border-accent hover:border-primary/50 relative flex flex-col overflow-hidden rounded-xl border transition-all">
+  <div className="bg-card group relative flex h-full flex-col overflow-hidden rounded-xl border shadow-sm transition-all hover:shadow-md">
     {/* Project Image */}
-    <div className="bg-accent relative h-64 overflow-hidden">
+    <div className="bg-muted relative aspect-video overflow-hidden">
       <Image src={image} alt={title} className="object-cover transition-transform duration-300 group-hover:scale-105" fill />
     </div>
 
     {/* Content */}
-    <div className="flex flex-1 flex-col p-6">
-      <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-      <p className="text-muted-foreground mb-4">{description}</p>
+    <div className="flex flex-1 flex-col p-5">
+      {/* Title */}
+      <h3 className="text-lg font-semibold leading-tight">{title}</h3>
+
+      {/* Description - fixed height with line clamp */}
+      <p className="text-muted-foreground mt-2 line-clamp-3 min-h-18 text-sm leading-relaxed">{description}</p>
 
       {/* Technologies */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        {technologies.map((tech) => (
-          <Badge key={tech} variant="secondary" className="rounded-full">
+      <div className="mt-4 flex min-h-14 flex-wrap content-start gap-1.5">
+        {technologies.slice(0, 5).map((tech) => (
+          <Badge key={tech} variant="secondary" className="h-6 rounded-full px-2.5 text-xs font-normal">
             {tech}
           </Badge>
         ))}
+        {technologies.length > 5 && (
+          <Badge variant="outline" className="h-6 rounded-full px-2.5 text-xs font-normal">
+            +{technologies.length - 5}
+          </Badge>
+        )}
       </div>
 
-      {/* Actions */}
-      <div className="mt-auto flex gap-3">
+      {/* Actions - always at bottom */}
+      <div className="mt-auto flex gap-2 pt-4">
         {liveUrl && (
-          <Button variant="default" className="rounded-full" asChild>
+          <Button size="sm" className="h-8 flex-1 rounded-full text-xs" asChild>
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-1 h-4 w-4" />
+              <ExternalLink className="mr-1.5 size-3.5" />
               Live Demo
             </a>
           </Button>
         )}
         {githubUrl && (
-          <Button variant="outline" className="rounded-full shadow-none" asChild>
+          <Button variant="outline" size="sm" className="h-8 flex-1 rounded-full text-xs shadow-none" asChild>
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <FaGithub className="mr-1 h-4 w-4" />
-              View Code
+              <FaGithub className="mr-1.5 size-3.5" />
+              Code
             </a>
           </Button>
         )}
