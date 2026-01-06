@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: "1001 Pétales",
+    description:
+      "Website for Association 1001 Pétales, a charity bringing joy to children with leukemia at Clocheville Hospital in Tours through IT equipment, theater shows, and activities.",
+    image: "/projects/1001-petales.jpg",
+    technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
+    liveUrl: "https://1001-petales.vercel.app",
+  },
+  {
+    title: "LV Detailing",
+    description:
+      "Professional car and motorcycle detailing service website. Features service packages, Instagram reels integration, and a quote request form for at-home detailing in Île-de-France.",
+    image: "/projects/lv-detailing.jpg",
+    technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
+    liveUrl: "https://www.lv-detailing.com",
+  },
+  {
     title: "Housefood",
     description: "Housefood is a platform for connecting home cooks with guests in your neighborhood.",
     image: "/projects/housefood.jpg",
