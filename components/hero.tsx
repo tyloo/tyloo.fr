@@ -4,8 +4,11 @@ import { AnimatedButton } from "@/components/ui/animated-button";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { RotatingText } from "@/components/ui/rotating-text";
 import { socials } from "@/lib/socials";
 import { cn } from "@/lib/utils";
+
+const titles = ["Engineering Manager", "Technical Lead", "Senior Software Engineer", "Rugby Player", "Proud Dad", "Metal Head"];
 
 export const Hero = () => (
   <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-6">
@@ -18,7 +21,7 @@ export const Hero = () => (
     <div className="relative z-1 max-w-3xl text-center">
       <Badge className="rounded-full border-none">
         <Zap className="fill-current" />
-        Engineering Manager / Technical Lead
+        <RotatingText texts={titles} />
       </Badge>
       <h1 className="mt-6 text-4xl leading-[1.2]! font-bold tracking-tight sm:text-5xl md:text-6xl">Building Scalable & Engaging Web Experiences</h1>
       <p className="mt-6 text-[17px] md:text-lg">

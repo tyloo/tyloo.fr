@@ -54,6 +54,15 @@ const useActiveSection = () => {
 export const Navbar = () => {
   const activeSection = useActiveSection();
 
+  // Update URL hash when active section changes
+  useEffect(() => {
+    if (activeSection) {
+      window.history.replaceState(null, "", `#${activeSection}`);
+    } else {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, [activeSection]);
+
   return (
     <nav className="bg-background fixed inset-x-4 top-6 z-10 mx-auto h-14 max-w-3xl rounded-full border dark:border-slate-700/70">
       <div className="mx-auto flex h-full items-center justify-between pr-3 pl-6">
