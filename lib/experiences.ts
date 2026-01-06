@@ -1,8 +1,16 @@
 export const experiences = [
   {
+    title: "Engineering Manager",
+    company: "PrestaShop",
+    period: "Jun 2025 - Present",
+    description:
+      "As Engineering Manager of the Core Open Source team, I led developers and owned the technical direction and delivery of the platform. I structured and animated the open-source community, redesigned release cycles to improve predictability and stability, and introduced architectural practices such as the C4 model and event modeling, notably for Pricing and Discount. I also defined and presented PrestaShop's AI strategy, contributing to company-wide technical vision.",
+    technologies: ["Symfony", "API Platform", "MySQL", "Scrum", "Event Modeling"],
+  },
+  {
     title: "Technical Lead",
     company: "FAUME",
-    period: "Sep 2022 - Present",
+    period: "Sep 2022 - Apr 2025",
     description:
       "I led a cross-functional development team to successfully deliver a major software project on time and within budget. By implementing an agile Scrum methodology, a CI/CD pipeline, and automated testing that boosted code coverage to 80%, I improved code quality, reduced deployment time, and minimized production issues. I also established coding standards, conducted code reviews, and mentored junior developers to ensure best practices. Additionally, I developed a scalable, high-availability web application that supported 30+ concurrent brands with minimal downtime.",
     technologies: [

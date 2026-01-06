@@ -18,7 +18,7 @@ export const Hero = () => (
     <div className="relative z-1 max-w-3xl text-center">
       <Badge className="rounded-full border-none">
         <Zap className="fill-current" />
-        Senior Software Engineer
+        Engineering Manager / Technical Lead
       </Badge>
       <h1 className="mt-6 text-4xl leading-[1.2]! font-bold tracking-tight sm:text-5xl md:text-6xl">Building Scalable & Engaging Web Experiences</h1>
       <p className="mt-6 text-[17px] md:text-lg">
