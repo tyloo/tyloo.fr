@@ -46,7 +46,7 @@ export const projects = [
     image: "/projects/portfolio.jpg",
     technologies: ["Typescript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
     liveUrl: "https://v2.tyloo.fr",
-    githubUrl: "https://github.com/tyloo/tyloo.fr",
+    githubUrl: "https://github.com/tyloo/portfolio-v2",
   },
   {
     title: "Portfolio V1",
