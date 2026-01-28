@@ -35,7 +35,7 @@ const useActiveSection = () => {
         const active = sections.find((s) => visibleSections.has(s)) ?? null;
         setActiveSection(active);
       },
-      { rootMargin: "-40% 0px -40% 0px" }
+      { rootMargin: "-40% 0px -40% 0px" },
     );
 
     for (const sectionId of sections) {
@@ -108,10 +108,7 @@ const NavMenu = ({ className, activeSection, ...props }: NavMenuProps) => (
     <NavigationMenuList className="gap-1 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
       {navItems.map((item) => (
         <NavigationMenuItem key={item.href}>
-          <NavigationMenuLink
-            asChild
-            className={cn("rounded-full px-4", activeSection === item.section && "bg-accent text-accent-foreground")}
-          >
+          <NavigationMenuLink asChild className={cn("rounded-full px-4", activeSection === item.section && "bg-accent text-accent-foreground")}>
             <Link href={item.href}>{item.label}</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

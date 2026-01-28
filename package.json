@@ -1,13 +1,21 @@
 {
   "name": "tyloo.fr",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A modern, responsive portfolio website built with Next.js 16, React 19, and Tailwind CSS 4",
+  "author": "Julien 'Tyloo' Bonvarlet <jbonva@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyloo/tyloo.fr.git"
+  },
+  "homepage": "https://tyloo.fr",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@biomejs/biome": "2.3.13",

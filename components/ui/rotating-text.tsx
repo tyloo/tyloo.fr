@@ -12,13 +12,7 @@ interface TypewriterTextProps {
   className?: string;
 }
 
-export const RotatingText = ({
-  texts,
-  typingSpeed = 80,
-  deletingSpeed = 50,
-  pauseDuration = 2000,
-  className,
-}: TypewriterTextProps) => {
+export const RotatingText = ({ texts, typingSpeed = 80, deletingSpeed = 50, pauseDuration = 2000, className }: TypewriterTextProps) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -46,7 +40,7 @@ export const RotatingText = ({
           }
         }
       },
-      isDeleting ? deletingSpeed : typingSpeed
+      isDeleting ? deletingSpeed : typingSpeed,
     );
 
     return () => clearTimeout(timeout);
