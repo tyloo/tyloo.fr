@@ -1,5 +1,22 @@
 export const projects = [
   {
+    title: "Poker Quiz",
+    description:
+      "A mobile-first web application designed to help players improve their poker decision-making skills through interactive quiz scenarios. Practice preflop and postflop decisions, learn key concepts, and track your progress as you level up.",
+    image: "/projects/poker-quiz.jpg",
+    technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
+    liveUrl: "https://pq.tyloo.fr",
+    githubUrl: "https://github.com/tyloo/poker-quiz",
+  },
+  {
+    title: "Poker Range Analyzer",
+    description: "A modern, interactive poker range analyzer for 6-max No-Limit Hold'em. Visualize GTO preflop ranges, calculate equity, and get action recommendations.",
+    image: "/projects/poker-range-analyzer.jpg",
+    technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
+    liveUrl: "https://poker.tyloo.fr",
+    githubUrl: "https://github.com/tyloo/poker-range-analyzer",
+  },
+  {
     title: "1001 Pétales",
     description:
       "Website for Association 1001 Pétales, a charity bringing joy to children with leukemia at Clocheville Hospital in Tours through IT equipment, theater shows, and activities.",
@@ -28,8 +45,16 @@ export const projects = [
     description: "This was my own Portfolio website. It contained all my projects, experiences, skills and a blog where I share my thoughts and ideas.",
     image: "/projects/portfolio.jpg",
     technologies: ["Typescript", "React", "Next.js", "Tailwind CSS", "Shadcn UI"],
-    liveUrl: "https://old.tyloo.fr",
+    liveUrl: "https://v2.tyloo.fr",
     githubUrl: "https://github.com/tyloo/tyloo.fr",
+  },
+  {
+    title: "Portfolio V1",
+    description: "The first version of my portfolio website built with Next.js and MDX. Features a blog section with posts about web development and a projects showcase.",
+    image: "/projects/portfolio-v1.jpg",
+    technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Shadcn UI", "MDX"],
+    liveUrl: "https://v1.tyloo.fr",
+    githubUrl: "https://github.com/tyloo/portfolio-v1",
   },
   {
     title: "TylooTube",
