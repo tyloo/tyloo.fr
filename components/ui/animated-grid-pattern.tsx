@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { useEffect, useId, useRef, useState } from "react";
+import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedGridPatternProps {
@@ -78,13 +77,15 @@ export const AnimatedGridPattern = ({
       }
     });
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const container = containerRef.current;
+
+    if (container) {
+      resizeObserver.observe(container);
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (container) {
+        resizeObserver.unobserve(container);
       }
     };
   }, []);
@@ -99,16 +100,18 @@ export const AnimatedGridPattern = ({
       <rect width="100%" height="100%" fill={`url(#${id})`} />
       <svg x={x} y={y} className="overflow-visible">
         {squares.map(({ pos: [x, y], id }, index) => (
-          <motion.rect
-            initial={{ opacity: 0 }}
-            animate={{ opacity: maxOpacity }}
-            transition={{
-              duration,
-              repeat: 1,
-              delay: index * 0.1,
-              repeatType: "reverse",
-            }}
-            onAnimationComplete={() => updateSquarePosition(id)}
+          <rect
+            className="animate-grid-square-fade motion-reduce:animate-none"
+            style={
+              {
+                "--grid-square-duration": `${duration * 2}s`,
+                "--grid-square-delay": `${index * 0.1}s`,
+                "--grid-square-opacity": maxOpacity,
+                // Running animation wins over this; it is the prefers-reduced-motion fallback.
+                opacity: maxOpacity,
+              } as CSSProperties
+            }
+            onAnimationEnd={() => updateSquarePosition(id)}
             key={`${x}-${y}-${index}`}
             width={width - 1}
             height={height - 1}

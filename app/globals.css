@@ -46,6 +46,28 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-cursor-blink: cursor-blink 1s ease-in-out infinite;
+  --animate-grid-square-fade: grid-square-fade var(--grid-square-duration) ease-in-out var(--grid-square-delay) both;
+
+  @keyframes cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes grid-square-fade {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: var(--grid-square-opacity);
+    }
+  }
 
   @keyframes accordion-down {
     from {

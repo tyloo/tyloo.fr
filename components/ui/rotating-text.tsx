@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -49,11 +48,7 @@ export const RotatingText = ({ texts, typingSpeed = 80, deletingSpeed = 50, paus
   return (
     <span className={cn("inline-flex items-center", className)}>
       <span className="min-h-[1em]">{displayedText || "\u200B"}</span>
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
-        className="ml-0.5 inline-block h-[1em] w-[2px] bg-current"
-      />
+      <span className="ml-0.5 inline-block h-[1em] w-[2px] animate-cursor-blink bg-current motion-reduce:animate-none" />
     </span>
   );
 };

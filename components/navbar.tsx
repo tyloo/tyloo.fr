@@ -2,12 +2,11 @@
 
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { type ComponentProps, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { Logo } from "@/components/logo";
 import { ThemeSwitcher } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
@@ -95,7 +94,9 @@ export const Navbar = () => {
   );
 };
 
-interface NavMenuProps extends ComponentProps<typeof NavigationMenu> {
+interface NavMenuProps {
+  className?: string;
+  orientation?: "horizontal" | "vertical";
   activeSection: Section | null;
 }
 
@@ -105,18 +106,29 @@ const navItems = [
   { href: "#projects", label: "Projects", section: "projects" },
 ] as const;
 
-const NavMenu = ({ className, activeSection, ...props }: NavMenuProps) => (
-  <NavigationMenu className={cn("data-[orientation=vertical]:items-start", className)} {...props}>
-    <NavigationMenuList className="gap-1 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
+const NavMenu = ({ className, orientation = "horizontal", activeSection }: NavMenuProps) => (
+  <div data-orientation={orientation} className={cn("relative flex max-w-max flex-1 items-center justify-center data-[orientation=vertical]:items-start", className)}>
+    <ul
+      data-orientation={orientation}
+      className="flex flex-1 list-none items-center justify-center gap-1 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start"
+    >
       {navItems.map((item) => (
-        <NavigationMenuItem key={item.href}>
-          <NavigationMenuLink asChild className={cn("rounded-full px-4", activeSection === item.section && "bg-accent text-accent-foreground")}>
-            <Link href={item.href}>{item.label}</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+        <li className="relative" key={item.href}>
+          <Link
+            href={item.href}
+            aria-current={activeSection === item.section ? "true" : undefined}
+            className={cn(
+              "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1",
+              "rounded-full px-4",
+              activeSection === item.section && "bg-accent text-accent-foreground",
+            )}
+          >
+            {item.label}
+          </Link>
+        </li>
       ))}
-    </NavigationMenuList>
-  </NavigationMenu>
+    </ul>
+  </div>
 );
 
 const NavigationSheet = ({ activeSection }: { activeSection: Section | null }) => (
