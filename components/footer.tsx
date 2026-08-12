@@ -43,9 +43,11 @@ export const Footer = () => (
         <div className="text-muted-foreground flex items-center gap-5">
           <Link href={socials.linkedIn} rel="noopener noreferrer" target="_blank">
             <FaLinkedin />
+            <span className="sr-only">LinkedIn profile</span>
           </Link>
           <Link href={socials.github} rel="noopener noreferrer" target="_blank">
             <FaGithub />
+            <span className="sr-only">GitHub profile</span>
           </Link>
         </div>
       </div>

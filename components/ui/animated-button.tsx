@@ -1,7 +1,6 @@
 "use client";
 
 import { cva, type VariantProps } from "class-variance-authority";
-import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -96,9 +95,11 @@ export function AnimatedButton({ href, children, variant, size, className, openI
 
   return (
     <GradientBorder variant={variant}>
-      <Link href={href} {...linkProps} className={cn(buttonVariants({ variant, size }), "border-input border", className)}>
+      {/* Plain anchor, not next/link: href may point at a static asset (e.g. the CV pdf),
+          which next/link would prefetch as an RSC route and 404 on. */}
+      <a href={href} {...linkProps} className={cn(buttonVariants({ variant, size }), "border-input border", className)}>
         {children}
-      </Link>
+      </a>
     </GradientBorder>
   );
 }

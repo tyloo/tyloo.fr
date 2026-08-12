@@ -75,11 +75,13 @@ export const Navbar = () => {
           <Button asChild variant="outline" size="icon" className="rounded-full shadow-none">
             <Link href="https://www.linkedin.com/in/julien-bonvarlet/" rel="noopener noreferrer" target="_blank">
               <FaLinkedinIn />
+              <span className="sr-only">LinkedIn profile</span>
             </Link>
           </Button>
           <Button asChild variant="outline" size="icon" className="rounded-full shadow-none">
             <Link href="https://github.com/tyloo" rel="noopener noreferrer" target="_blank">
               <FaGithub />
+              <span className="sr-only">GitHub profile</span>
             </Link>
           </Button>
 
@@ -122,6 +124,7 @@ const NavigationSheet = ({ activeSection }: { activeSection: Section | null }) =
     <SheetTrigger asChild>
       <Button variant="outline" size="icon" className="rounded-full">
         <Menu />
+        <span className="sr-only">Open menu</span>
       </Button>
     </SheetTrigger>
     <SheetContent className="px-6 pt-3">
