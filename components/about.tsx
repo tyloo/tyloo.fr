@@ -48,7 +48,7 @@ export const About = () => (
 const ProfileImage = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => (
   <div className={cn("mt-10 h-48 w-48 md:h-64 md:w-64", className)} {...props}>
     <div className="bg-accent relative h-full w-full overflow-hidden rounded-2xl">
-      <Image src="/julien-bonvarlet.webp" alt="Julien Bonvarlet" className="object-cover" fill />
+      <Image src="/julien-bonvarlet.webp" alt="Julien Bonvarlet" className="object-cover" fill sizes="(min-width: 768px) 256px, 192px" />
     </div>
   </div>
 );

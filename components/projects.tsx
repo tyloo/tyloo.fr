@@ -43,7 +43,7 @@ export const ProjectCard = ({
   <div className="bg-card group relative flex h-full flex-col overflow-hidden rounded-xl border shadow-sm transition-all hover:shadow-md">
     {/* Project Image */}
     <div className="bg-muted relative aspect-video overflow-hidden">
-      <Image src={image} alt={title} className="object-cover transition-transform duration-300 group-hover:scale-105" fill />
+      <Image src={image} alt={title} className="object-cover transition-transform duration-300 group-hover:scale-105" fill sizes="(min-width: 768px) 372px, 100vw" />
     </div>
 
     {/* Content */}
