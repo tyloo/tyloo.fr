@@ -3,7 +3,7 @@ import type { Dictionary } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
 import { BookingLink } from "./booking-link";
-import { container, focusOnDark } from "./classes";
+import { container, focusOnDark, sectionHeading } from "./classes";
 import styles from "./home.module.css";
 
 export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) {
@@ -13,13 +13,13 @@ export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
     <section aria-labelledby="closing" className="bg-cobalt text-white">
       <div className={`${container} grid items-center gap-12 py-20 md:grid-cols-[1fr_auto] md:py-28`}>
         <div>
-          <h2 id="closing" className="m-0 font-display text-2xl font-extrabold [font-stretch:110%]">
+          <h2 id="closing" className={`${sectionHeading} max-w-[16ch] text-balance`}>
             {dict.closing.heading}
           </h2>
-          <p className="mt-6 mb-0">
+          <p className="mt-10 mb-0">
             <BookingLink
               newTabLabel={dict.cta.newTab}
-              className={`inline-block text-balance font-display text-[clamp(2.75rem,7vw,6.5rem)] font-extrabold leading-[0.95] underline decoration-4 underline-offset-[0.12em] [font-stretch:120%] hover:decoration-sun ${focusOnDark}`}
+              className={`inline-block rounded-full bg-sun px-7 py-3.5 font-bold text-ink text-lg shadow-[5px_5px_0_var(--color-ink)] hover:shadow-[3px_3px_0_var(--color-ink)] sm:text-xl ${focusOnDark}`}
             >
               {dict.cta.book}
             </BookingLink>

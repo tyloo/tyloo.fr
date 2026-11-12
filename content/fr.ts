@@ -111,7 +111,7 @@ export const fr: Dictionary = {
     cv: "Télécharger mon CV (PDF)",
   },
   closing: {
-    heading: "On joue cartes sur table ?",
+    heading: "On joue cartes sur table\u00a0?",
     orEmail: "Ou écrivez-moi à",
     agents: "Pas de bluff avec les agents IA non plus : ce site existe aussi en",
     markdown: "version Markdown",
