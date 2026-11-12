@@ -1,0 +1,133 @@
+.board {
+  font-variation-settings:
+    "opsz" 14,
+    "wdth" 100;
+  color: #23305a;
+  background-color: #f3f5f4;
+  background-image: radial-gradient(circle, #cbd2d0 1.1px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.display {
+  font-variation-settings:
+    "opsz" 96,
+    "wdth" 76;
+  font-weight: 800;
+}
+
+.label {
+  font-variation-settings:
+    "opsz" 24,
+    "wdth" 80;
+  font-weight: 600;
+}
+
+.lift {
+  box-shadow:
+    0 1px 1px rgb(92 64 28 / 0.14),
+    0 10px 14px -8px rgb(92 64 28 / 0.36),
+    0 20px 26px -20px rgb(92 64 28 / 0.3);
+}
+
+.sticky {
+  color: #23305a;
+  background-color: var(--paper);
+  background-image: linear-gradient(rgb(35 48 90 / 0.07), rgb(35 48 90 / 0.07));
+  background-repeat: no-repeat;
+  background-size: 100% 0.8rem;
+  border-radius: 1px;
+  transform: rotate(var(--r, 0deg));
+}
+
+.orange {
+  --paper: #ffb259;
+}
+
+.blue {
+  --paper: #8ec5ff;
+}
+
+.green {
+  --paper: #a8e6a1;
+}
+
+.yellow {
+  --paper: #ffe873;
+}
+
+.swatch {
+  background-image: none;
+}
+
+.tilted {
+  transform: rotate(var(--r, 0deg));
+}
+
+.press {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.press:hover {
+  box-shadow:
+    0 1px 1px rgb(92 64 28 / 0.14),
+    0 14px 18px -8px rgb(92 64 28 / 0.4),
+    0 26px 32px -22px rgb(92 64 28 / 0.32);
+  transform: rotate(var(--r, 0deg)) translateY(-2px);
+}
+
+.place {
+  animation: place 480ms cubic-bezier(0.2, 0.75, 0.25, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 200ms);
+}
+
+@keyframes place {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px) scale(1.07) rotate(calc(var(--r, 0deg) + 5deg));
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(1px) scale(0.99) rotate(calc(var(--r, 0deg) - 0.5deg));
+  }
+  100% {
+    transform: rotate(var(--r, 0deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .place {
+    animation: none;
+  }
+
+  .press:hover {
+    transform: rotate(var(--r, 0deg));
+  }
+}
+
+.tape {
+  position: absolute;
+  top: -0.8rem;
+  left: 50%;
+  width: 6.5rem;
+  height: 1.6rem;
+  background-color: rgb(255 255 255 / 0.55);
+  border-inline: 1px dashed rgb(35 48 90 / 0.12);
+  box-shadow: 0 1px 2px rgb(92 64 28 / 0.16);
+  backdrop-filter: blur(1px);
+  rotate: var(--t, -3deg);
+  translate: -50% 0;
+}
+
+.pin {
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  background: radial-gradient(circle at 35% 30%, #6d7cad, #23305a 70%);
+  border-radius: 9999px;
+  box-shadow: 0 3px 4px -1px rgb(92 64 28 / 0.45);
+  translate: -50% 0;
+}

@@ -1,0 +1,74 @@
+.root :focus-visible {
+  outline: 2px solid #f2c36b;
+  outline-offset: 2px;
+}
+
+.root ::selection {
+  color: #241629;
+  background: #ede3d8;
+}
+
+/* Replay: every line is in the server HTML; CSS only delays and "types" it in. */
+.line {
+  animation: type var(--dur) steps(var(--steps), end) var(--delay) both;
+}
+
+.running {
+  animation: hide 0s linear var(--total) forwards;
+}
+
+.prompt {
+  animation: show 0s linear var(--total) both;
+}
+
+.stack {
+  display: grid;
+}
+
+.stack > * {
+  grid-area: 1 / 1;
+}
+
+.skipped .line,
+.skipped .prompt {
+  animation: none;
+}
+
+.skipped .running {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line,
+  .prompt {
+    animation: none;
+  }
+
+  .running {
+    display: none;
+  }
+}
+
+@keyframes type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes hide {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes show {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
