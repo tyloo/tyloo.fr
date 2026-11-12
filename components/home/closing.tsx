@@ -15,7 +15,7 @@ export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
         <h2 id="closing" className={sectionHeading}>
           {dict.closing.heading}
         </h2>
-        <div className="mt-8 grid items-center gap-10 sm:mt-10 sm:grid-cols-[1fr_auto] sm:gap-12">
+        <div className="mt-8 grid items-center gap-10 text-center sm:mt-10 lg:grid-cols-[1fr_auto] lg:gap-12 lg:text-left">
           <div>
             <p className="m-0">
               <BookingLink
@@ -31,7 +31,7 @@ export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                 {site.email}
               </a>
             </p>
-            <p className="mt-4 mb-0 max-w-[60ch] text-base text-white/85">
+            <p className="mx-auto mt-4 mb-0 max-w-[60ch] text-base text-white/85 lg:mx-0">
               {dict.closing.agents}{" "}
               <a href={`/${locale}/index.md`} type="text/markdown" className={quietLink}>
                 {dict.closing.markdown}
@@ -43,10 +43,10 @@ export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
               .
             </p>
           </div>
-          <div aria-hidden="true" className="rotate-[-8deg] justify-self-start sm:justify-self-end">
-            <span className={`${styles.chip} [--chip-size:8rem] sm:[--chip-size:10rem] lg:[--chip-size:13rem]`} style={{ "--chip-color": "var(--color-pink)" } as CSSProperties}>
+          <div aria-hidden="true" className="rotate-[-8deg] justify-self-center lg:justify-self-end">
+            <span className={`${styles.chip} [--chip-size:9.5rem] sm:[--chip-size:10rem] lg:[--chip-size:13rem]`} style={{ "--chip-color": "var(--color-pink)" } as CSSProperties}>
               <span className={styles.chipInlay}>
-                <span className="font-display text-xl font-black [font-stretch:110%] sm:text-2xl lg:text-4xl">15&nbsp;min</span>
+                <span className="font-display text-lg font-black [font-stretch:110%] sm:text-xl lg:text-4xl">15&nbsp;min</span>
               </span>
             </span>
           </div>
