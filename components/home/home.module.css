@@ -22,10 +22,37 @@
   }
 }
 
+/* From 64rem the portrait takes 15vw plus a 3rem gap on the right, so the name fills what is left. */
 @media (min-width: 64rem) {
   .name {
-    font-size: min(11rem, calc((100vw - 4rem) / 9));
+    font-size: min(8.5rem, calc((85vw - 7rem) / 9));
     font-stretch: 150%;
+  }
+}
+
+/* Portrait: a chip-like circle with a sun ring and a hard navy offset. */
+.portrait {
+  position: relative;
+  width: 7rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 6px #ffd23f,
+    8px 8px 0 6px #10123a;
+}
+
+@media (min-width: 40rem) {
+  .portrait {
+    width: 9rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .portrait {
+    width: min(15vw, 16rem);
+    box-shadow:
+      0 0 0 10px #ffd23f,
+      14px 14px 0 10px #10123a;
   }
 }
 

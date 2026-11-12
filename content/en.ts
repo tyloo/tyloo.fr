@@ -18,6 +18,7 @@ export const en: Dictionary = {
   },
   hero: {
     role: "Senior freelance developer.",
+    photoAlt: "Portrait of Julien Bonvarlet",
     tagline: "I design and ship solid web applications, and I help teams work with AI agents without giving up on quality.",
   },
   hand: {
@@ -76,7 +77,6 @@ export const en: Dictionary = {
     heading: "Who's holding the cards",
     intro:
       "Fifteen years of full-stack development, from Symfony to React, up to leading PrestaShop's open-source Core team. Now freelance, I take on your projects end to end or strengthen your team wherever it needs it.",
-    photoAlt: "Portrait of Julien Bonvarlet",
     chipsLabel: "My stack of chips",
     chips: [
       { value: "15", label: "years in the trade" },

@@ -7,7 +7,7 @@ export type Dictionary = {
   meta: { title: string; description: string; ogLocale: string };
   header: { skip: string; social: string; switchLabel: string; switchTo: Locale };
   cta: { book: string; newTab: string };
-  hero: { role: string; tagline: string };
+  hero: { role: string; tagline: string; photoAlt: string };
   hand: { heading: string; caption: string; flip: string; tools: string; ranks: Record<Rank, string> };
   services: Record<ServiceId, { title: string; summary: string }>;
   availability: { label: string; status: string; seat: string; location: string };
@@ -27,7 +27,6 @@ export type Dictionary = {
   about: {
     heading: string;
     intro: string;
-    photoAlt: string;
     chipsLabel: string;
     chips: { value: string; label: string }[];
     careerHeading: string;
