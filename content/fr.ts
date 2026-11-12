@@ -14,7 +14,7 @@ export const fr: Dictionary = {
     switchTo: "en",
   },
   cta: {
-    book: "Réserver un appel de 30\u00a0min",
+    book: "Réserver un appel de 15\u00a0min",
     newTab: "(s'ouvre dans un nouvel onglet)",
   },
   hero: {
@@ -48,7 +48,7 @@ export const fr: Dictionary = {
     heading: "Une mission se joue comme une main",
     intro: "Cinq tours d'enchères, du premier appel à la mise en production.",
     items: [
-      { street: "Préflop", title: "Un appel de 30 minutes", detail: "On regarde vos cartes : votre besoin, vos contraintes et votre calendrier." },
+      { street: "Préflop", title: "Un appel de 15 minutes", detail: "On regarde vos cartes : votre besoin, vos contraintes et votre calendrier." },
       { street: "Flop", title: "Une spec écrite", detail: "Je reformule le besoin en une spécification courte que vous validez." },
       { street: "Turn", title: "Des tickets découpés", detail: "Chaque ticket est assez petit pour être livré, testé et relu." },
       { street: "River", title: "Implémentation avec agents", detail: "Les agents écrivent une partie du code. Je pilote, je relis et je teste chaque changement." },

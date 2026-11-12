@@ -13,7 +13,7 @@ export const en: Dictionary = {
     switchTo: "fr",
   },
   cta: {
-    book: "Book a 30-min call",
+    book: "Book a 15-min call",
     newTab: "(opens in a new tab)",
   },
   hero: {
@@ -47,7 +47,7 @@ export const en: Dictionary = {
     heading: "A project plays like a hand",
     intro: "Five betting rounds, from the first call to production.",
     items: [
-      { street: "Preflop", title: "A 30-minute call", detail: "We look at your cards: your needs, your constraints and your timeline." },
+      { street: "Preflop", title: "A 15-minute call", detail: "We look at your cards: your needs, your constraints and your timeline." },
       { street: "Flop", title: "A written spec", detail: "I restate the need as a short specification that you approve." },
       { street: "Turn", title: "Small tickets", detail: "Each ticket is small enough to be shipped, tested and reviewed." },
       { street: "River", title: "Building with agents", detail: "Agents write part of the code. I steer, review and test every change." },

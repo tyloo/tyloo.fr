@@ -6,7 +6,7 @@ Freelance portfolio of Julien Bonvarlet, in French and English. The design is th
 - **Agent-readable mirrors:** `lib/markdown.ts` (served at `/{lang}/index.md`), `app/llms.txt` and `lib/json-ld.ts` restate the page content. A new page section belongs in the markdown renderer too.
 - **Routing:** every page sits under `app/[lang]`; `proxy.ts` redirects unprefixed paths to the visitor's language. Paths with a file extension skip the proxy; a new metadata route without one (like `apple-icon`) must be added to the matcher's exclusions.
 - **Gotchas:** the Tailwind Turbopack rule in `next.config.ts` excludes `*.module.css`, otherwise CSS Modules lose their class names. After adding or renaming routes, run `pnpm next typegen` before `pnpm type-check`.
-- **Placeholders:** `site.callUrl` until the Cal.com event exists. Testimonials stay hidden while their list is empty.
+- **Placeholders:** testimonials stay hidden while their list is empty.
 - **Done means** `pnpm lint`, `pnpm type-check` and `pnpm build` all pass, as in CI.
 
 ## Agent skills

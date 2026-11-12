@@ -6,8 +6,7 @@ export const site = {
   email: "jbonva@gmail.com",
   github: "https://github.com/tyloo",
   linkedin: "https://www.linkedin.com/in/julien-bonvarlet/",
-  // Placeholder until the Cal.com event exists.
-  callUrl: "https://cal.com/tyloo/30min",
+  callUrl: "https://cal.com/julien-bonvarlet-hemwbu/15-minutes-introduction",
   photo: "/julien-bonvarlet.webp",
   cv: "/resume-julien-bonvarlet.pdf",
 } as const;

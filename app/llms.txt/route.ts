@@ -17,7 +17,7 @@ export function GET() {
     "",
     "## Contact",
     "",
-    `- [Book a 30-minute call](${site.callUrl})`,
+    `- [Book a 15-minute call](${site.callUrl})`,
     `- [Email](mailto:${site.email})`,
     "",
     "## Optional",

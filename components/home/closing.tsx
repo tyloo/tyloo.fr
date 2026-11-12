@@ -45,7 +45,7 @@ export function Closing({ dict, locale }: { dict: Dictionary; locale: Locale }) 
         <div aria-hidden="true" className="mx-auto rotate-[-8deg]">
           <span className={styles.chip} style={{ "--chip-color": "var(--color-pink)", "--chip-size": "clamp(12rem, 22vw, 16rem)" } as CSSProperties}>
             <span className={styles.chipInlay}>
-              <span className="font-display text-3xl font-black [font-stretch:110%] md:text-4xl">30&nbsp;min</span>
+              <span className="font-display text-3xl font-black [font-stretch:110%] md:text-4xl">15&nbsp;min</span>
             </span>
           </span>
         </div>
