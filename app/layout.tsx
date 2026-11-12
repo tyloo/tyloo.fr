@@ -1,36 +1,15 @@
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Source_Code_Pro } from "next/font/google";
-import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import type { ReactNode } from "react";
-
-const sourceCodePro = Source_Code_Pro({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  title: "Portfolio of Julien 'Tyloo' Bonvarlet",
-  description: "Portfolio of Julien 'Tyloo' Bonvarlet. It contains all my projects, experiences, skills and a blog where I share my thoughts and ideas.",
+  title: "Julien Bonvarlet, développeur freelance senior",
+  description: "Développeur freelance senior : backend, frontend, lead technique et développement augmenté par l'IA.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${sourceCodePro.className} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
-        <Analytics />
-      </body>
+    <html lang="fr">
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
