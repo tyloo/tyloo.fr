@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Dictionary } from "@/content/types";
 import { services, site } from "@/lib/site";
+import { sectionHeading } from "./classes";
 import { Hand } from "./hand";
 import styles from "./home.module.css";
 
@@ -38,7 +39,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
 
       <section aria-labelledby="services" className="flex flex-col">
         {/* The heading comes first for assistive tech but sits under the cards on screen. */}
-        <h2 id="services" className="order-2 mx-auto my-0 max-w-[40rem] px-5 text-center font-display text-2xl font-extrabold leading-tight [font-stretch:110%] sm:text-3xl">
+        <h2 id="services" className={`${sectionHeading} order-2 px-5 text-center`}>
           {dict.hand.heading}
         </h2>
         <div className="relative order-1">
@@ -47,7 +48,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
             <Hand cards={cards} flipLabel={dict.hand.flip} toolsLabel={dict.hand.tools} />
           </div>
         </div>
-        <p className="order-3 mx-auto mt-3 mb-0 max-w-[40rem] px-5 pb-16 text-center">{dict.hand.caption}</p>
+        <p className="order-3 mx-auto mt-3 mb-0 max-w-[40rem] px-5 pb-14 text-center sm:mt-4 md:pb-16">{dict.hand.caption}</p>
       </section>
     </>
   );

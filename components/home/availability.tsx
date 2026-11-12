@@ -7,7 +7,7 @@ export function Availability({ dict }: { dict: Dictionary }) {
     <section aria-label={dict.availability.label} className="bg-sun">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="m-0 font-display text-2xl font-extrabold leading-tight [font-stretch:110%]">{dict.availability.status}</p>
+          <p className="m-0 font-display text-xl font-extrabold leading-tight sm:text-2xl sm:[font-stretch:110%]">{dict.availability.status}</p>
           <p className="m-0 mt-1">
             {dict.availability.seat} {dict.availability.location}
           </p>

@@ -22,8 +22,8 @@ export const en: Dictionary = {
     tagline: "I design and ship solid web applications, and I help teams work with AI agents without giving up on quality.",
   },
   hand: {
-    heading: "A royal flush: five ways I can help",
-    caption: "The best possible hand in poker. Pick a card to flip it and see the details.",
+    heading: "My royal flush",
+    caption: "Five ways I can help, the best possible hand in poker. Pick a card to flip it and see the details.",
     flip: "Flip the card",
     tools: "Tools",
     ranks: { A: "Ace of spades", K: "King of spades", Q: "Queen of spades", J: "Jack of spades", "10": "Ten of spades" },
@@ -45,8 +45,8 @@ export const en: Dictionary = {
     location: "Based in Paris. Remote work, on-site only occasionally.",
   },
   steps: {
-    heading: "A project plays like a hand",
-    intro: "Five betting rounds, from the first call to production.",
+    heading: "How a hand plays out",
+    intro: "A project plays in five betting rounds, from the first call to production.",
     items: [
       { street: "Preflop", title: "A 15-minute call", detail: "We look at your cards: your needs, your constraints and your timeline." },
       { street: "Flop", title: "A written spec", detail: "I restate the need as a short specification that you approve." },
@@ -70,11 +70,11 @@ export const en: Dictionary = {
     },
   },
   testimonials: {
-    heading: "What the other players say",
+    heading: "What other players say",
     items: [],
   },
   about: {
-    heading: "Who's holding the cards",
+    heading: "Who holds the cards",
     intro:
       "Fifteen years of full-stack development, from Symfony to React, up to leading PrestaShop's open-source Core team. Now freelance, I take on your projects end to end or strengthen your team wherever it needs it.",
     chipsLabel: "My stack of chips",
@@ -110,7 +110,7 @@ export const en: Dictionary = {
     cv: "Download my CV (PDF)",
   },
   closing: {
-    heading: "Shall we put our cards on the table?",
+    heading: "Cards on the table?",
     orEmail: "Or email me at",
     agents: "No bluffing with AI agents either: this site also comes as",
     markdown: "Markdown",

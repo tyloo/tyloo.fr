@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/content/types";
 import type { Locale } from "@/lib/i18n";
-import { container, sectionHeading } from "./classes";
+import { colouredSection, container, sectionHeading } from "./classes";
 
 const layout = ["md:max-w-[56rem]", "md:ml-auto md:max-w-[44rem]", "md:ml-[12%] md:max-w-[44rem]"];
 const quoteMarks: Record<Locale, [string, string]> = { fr: ["«\u00a0", "\u00a0»"], en: ["“", "”"] };
@@ -11,17 +11,17 @@ export function Testimonials({ dict, locale }: { dict: Dictionary; locale: Local
 
   return (
     <section aria-labelledby="testimonials" className="bg-pink">
-      <div className={`${container} py-20 md:py-28`}>
+      <div className={`${container} ${colouredSection}`}>
         <h2 id="testimonials" className={sectionHeading}>
           {dict.testimonials.heading}
         </h2>
-        <ul className="m-0 mt-12 grid list-none gap-14 p-0 md:gap-20">
+        <ul className="m-0 mt-8 grid list-none gap-10 p-0 sm:mt-12 md:gap-20">
           {dict.testimonials.items.map((testimonial, i) => (
             <li key={testimonial.quote} className={layout[i % layout.length]}>
               <figure className="m-0">
                 <blockquote className="m-0">
                   <p
-                    className={`m-0 font-display font-bold leading-[1.15] [font-stretch:110%] ${i === 0 ? "text-[clamp(1.625rem,3.4vw,2.75rem)]" : "text-[clamp(1.375rem,2.4vw,2rem)]"}`}
+                    className={`m-0 font-display font-bold leading-[1.15] [font-stretch:110%] ${i === 0 ? "text-[clamp(1.375rem,3.4vw,2.75rem)]" : "text-[clamp(1.25rem,2.4vw,2rem)]"}`}
                   >
                     {open}
                     {testimonial.quote}

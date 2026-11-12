@@ -23,8 +23,8 @@ export const fr: Dictionary = {
     tagline: "Je conçois et livre des applications web solides, et j'aide les équipes à travailler avec des agents IA sans rien céder sur la qualité.",
   },
   hand: {
-    heading: "Une quinte flush royale, cinq façons de vous aider",
-    caption: "La meilleure main possible au poker. Choisissez une carte pour la retourner et voir le détail.",
+    heading: "Ma quinte flush royale",
+    caption: "Cinq façons de vous aider, la meilleure main possible au poker. Choisissez une carte pour la retourner et voir le détail.",
     flip: "Retourner la carte",
     tools: "Outils",
     ranks: { A: "As de pique", K: "Roi de pique", Q: "Dame de pique", J: "Valet de pique", "10": "Dix de pique" },
@@ -46,8 +46,8 @@ export const fr: Dictionary = {
     location: "Basé à Paris. Missions à distance, présentiel exceptionnel.",
   },
   steps: {
-    heading: "Une mission se joue comme une main",
-    intro: "Cinq tours d'enchères, du premier appel à la mise en production.",
+    heading: "Le déroulé d'une main",
+    intro: "Une mission se joue en cinq tours d'enchères, du premier appel à la mise en production.",
     items: [
       { street: "Préflop", title: "Un appel de 15 minutes", detail: "On regarde vos cartes : votre besoin, vos contraintes et votre calendrier." },
       { street: "Flop", title: "Une spec écrite", detail: "Je reformule le besoin en une spécification courte que vous validez." },
@@ -71,7 +71,7 @@ export const fr: Dictionary = {
     },
   },
   testimonials: {
-    heading: "Ce qu'en disent les autres joueurs",
+    heading: "L'avis des autres joueurs",
     items: [],
   },
   about: {
@@ -111,7 +111,7 @@ export const fr: Dictionary = {
     cv: "Télécharger mon CV (PDF)",
   },
   closing: {
-    heading: "On joue cartes sur table\u00a0?",
+    heading: "Cartes sur table\u00a0?",
     orEmail: "Ou écrivez-moi à",
     agents: "Pas de bluff avec les agents IA non plus : ce site existe aussi en",
     markdown: "version Markdown",

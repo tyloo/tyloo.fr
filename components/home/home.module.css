@@ -376,13 +376,12 @@
 
 /* A poker chip: coloured disc with white edge spots and a white inlay. */
 .chip {
-  --chip-size: 8.5rem;
   display: grid;
   place-items: center;
-  width: var(--chip-size);
+  width: var(--chip-size, 8.5rem);
   aspect-ratio: 1;
   background: var(--chip-color);
-  border: calc(var(--chip-size) * 0.09) dashed #fff;
+  border: calc(var(--chip-size, 8.5rem) * 0.09) dashed #fff;
   border-radius: 50%;
   box-shadow: 5px 5px 0 #10123a;
 }

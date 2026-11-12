@@ -1,16 +1,16 @@
 import type { Dictionary } from "@/content/types";
-import { container, sectionHeading } from "./classes";
+import { container, lightSection, sectionHeading, sectionIntro } from "./classes";
 import styles from "./home.module.css";
 
 export function Steps({ dict }: { dict: Dictionary }) {
   return (
-    <section aria-labelledby="steps" className={`${container} py-20 md:py-28`}>
+    <section aria-labelledby="steps" className={`${container} ${lightSection}`}>
       <h2 id="steps" className={sectionHeading}>
         {dict.steps.heading}
       </h2>
-      <p className="mt-4 mb-0 max-w-[50ch]">{dict.steps.intro}</p>
+      <p className={sectionIntro}>{dict.steps.intro}</p>
       {/* On wide screens each step spans four shared rows (subgrid), so numerals, labels, titles and details line up across columns. */}
-      <ol className="m-0 mt-12 grid list-none gap-8 p-0 lg:grid-cols-5 lg:grid-rows-[repeat(4,auto)] lg:gap-x-6 lg:gap-y-0">
+      <ol className="m-0 mt-8 grid list-none gap-8 p-0 sm:mt-12 lg:grid-cols-5 lg:grid-rows-[repeat(4,auto)] lg:gap-x-6 lg:gap-y-0">
         {dict.steps.items.map((step, i) => (
           <li key={step.street} className="grid grid-cols-[4.5rem_1fr] content-start gap-x-4 border-ink border-t-2 pt-5 lg:row-span-4 lg:grid-cols-1 lg:grid-rows-subgrid">
             <span aria-hidden="true" className={`${styles.numeral} row-span-3 font-display text-[4.5rem] font-black leading-none [font-stretch:120%] lg:row-span-1 lg:mb-5`}>
