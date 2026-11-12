@@ -38,7 +38,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
         <div className="relative order-1">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-[55%] bg-cobalt" />
           <div className="relative mx-auto max-w-[100rem]">
-            <Hand cards={cards} flipLabel={dict.hand.flip} toolsLabel={dict.hand.tools} />
+            <Hand cards={cards} labels={{ flip: dict.hand.flip, tools: dict.hand.tools, indicator: dict.hand.indicator }} />
           </div>
         </div>
         <p className="order-3 mx-auto mt-3 mb-0 max-w-[40rem] px-5 pb-14 text-center sm:mt-4 md:pb-16">{dict.hand.caption}</p>

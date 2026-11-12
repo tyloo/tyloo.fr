@@ -27,6 +27,7 @@ export const fr: Dictionary = {
     caption: "Cinq façons de vous aider, la meilleure main possible au poker. Choisissez une carte pour la retourner et voir le détail.",
     flip: "Retourner la carte",
     tools: "Outils",
+    indicator: "Cartes de la main, faites glisser pour les parcourir",
     ranks: { A: "As de pique", K: "Roi de pique", Q: "Dame de pique", J: "Valet de pique", "10": "Dix de pique" },
   },
   services: {

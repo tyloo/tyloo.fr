@@ -8,7 +8,7 @@ export type Dictionary = {
   header: { skip: string; social: string; switchLabel: string; switchTo: Locale };
   cta: { book: string; newTab: string };
   hero: { role: string; tagline: string; photoAlt: string };
-  hand: { heading: string; caption: string; flip: string; tools: string; ranks: Record<Rank, string> };
+  hand: { heading: string; caption: string; flip: string; tools: string; indicator: string; ranks: Record<Rank, string> };
   services: Record<ServiceId, { title: string; summary: string }>;
   availability: { label: string; status: string; seat: string; location: string };
   steps: { heading: string; intro: string; items: { street: string; title: string; detail: string }[] };

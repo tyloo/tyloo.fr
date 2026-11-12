@@ -26,6 +26,7 @@ export const en: Dictionary = {
     caption: "Five ways I can help, the best possible hand in poker. Pick a card to flip it and see the details.",
     flip: "Flip the card",
     tools: "Tools",
+    indicator: "Cards in the hand, swipe to browse them",
     ranks: { A: "Ace of spades", K: "King of spades", Q: "Queen of spades", J: "Jack of spades", "10": "Ten of spades" },
   },
   services: {

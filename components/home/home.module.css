@@ -70,6 +70,12 @@
   list-style: none;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: 1.25rem;
+  /* The mini-card indicator below replaces the scrollbar. */
+  scrollbar-width: none;
+}
+
+.hand::-webkit-scrollbar {
+  display: none;
 }
 
 .slot {
@@ -389,4 +395,58 @@
   background: #fff;
   border: 2px dashed var(--chip-color);
   border-radius: 50%;
+}
+
+/* Scroll indicator under the hand: one mini card per card, phones and tablets only. */
+.indicator {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  margin: -0.75rem 0 1.75rem;
+}
+
+.indicatorCard {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+}
+
+.indicatorCard span {
+  width: 0.75rem;
+  height: 1.05rem;
+  background: #fff;
+  border: 2px solid #10123a;
+  border-radius: 3px;
+  box-shadow: 2px 2px 0 #10123a;
+  transition:
+    background-color 200ms ease,
+    translate 200ms ease;
+}
+
+.indicatorCard[aria-current="true"] span {
+  background: #ffd23f;
+  translate: 0 -3px;
+}
+
+.indicatorCard:focus-visible {
+  outline: 3px solid #10123a;
+  outline-offset: 2px;
+}
+
+@media (min-width: 64rem) {
+  .indicator {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indicatorCard span {
+    transition: none;
+  }
 }
