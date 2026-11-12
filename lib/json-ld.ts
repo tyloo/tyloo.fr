@@ -12,7 +12,7 @@ export function buildJsonLd(dict: Dictionary, locale: Locale) {
         "@type": "Person",
         "@id": person,
         name: site.name,
-        alternateName: "Tyloo",
+        alternateName: site.handle,
         jobTitle: dict.hero.role.replace(/\.$/, ""),
         url: site.url,
         image: `${site.url}${site.photo}`,

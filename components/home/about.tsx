@@ -22,7 +22,7 @@ export function About({ dict }: { dict: Dictionary }) {
         <h3 className="sr-only">{dict.about.chipsLabel}</h3>
         <dl className="m-0 mt-12 flex flex-wrap gap-x-8 gap-y-10">
           {dict.about.chips.map((chip, i) => (
-            <div key={chip.label} className="flex w-[10.5rem] flex-col-reverse items-center gap-3 text-center">
+            <div key={chip.label} className="flex w-[10.5rem] flex-col-reverse items-center justify-end gap-3 text-center">
               <dt className="text-base font-semibold leading-snug">{chip.label}</dt>
               <dd className="m-0">
                 <span className={styles.chip} style={{ "--chip-color": chipColors[i % chipColors.length] } as CSSProperties}>

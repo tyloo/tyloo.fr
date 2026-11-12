@@ -3,6 +3,7 @@
 export const site = {
   url: "https://tyloo.fr",
   name: "Julien Bonvarlet",
+  handle: "Tyloo",
   email: "jbonva@gmail.com",
   github: "https://github.com/tyloo",
   linkedin: "https://www.linkedin.com/in/julien-bonvarlet/",

@@ -10,7 +10,7 @@ export function SiteHeader({ dict }: { dict: Dictionary }) {
   return (
     <header className="bg-cobalt text-white">
       <div className="mx-auto flex max-w-[100rem] flex-wrap items-center gap-x-6 gap-y-4 px-5 py-5 sm:px-8">
-        <p className="m-0 mr-auto font-display text-xl font-extrabold [font-stretch:110%]">Julien B.</p>
+        <p className="m-0 mr-auto font-display text-xl font-extrabold [font-stretch:110%]">{site.handle}</p>
         <nav aria-label={dict.header.social}>
           <ul className="m-0 flex list-none gap-5 p-0">
             <li>
