@@ -16,19 +16,12 @@ export function Hero({ dict }: { dict: Dictionary }) {
     <>
       <section className="bg-cobalt text-white">
         <div className="mx-auto max-w-[100rem] px-5 pt-8 pb-6 sm:px-8 sm:pt-12">
-          <div className="grid items-center gap-x-12 gap-y-8 lg:grid-cols-[1fr_auto]">
+          <div className="grid items-center gap-x-12 gap-y-12 lg:grid-cols-[1fr_auto]">
             <h1 className={styles.name}>
               <span className="block">Julien</span> <span className="block">Bonvarlet</span>
             </h1>
-            <div className={`${styles.portrait} order-first ml-1.5 lg:order-none lg:mr-2.5 lg:ml-0`}>
-              <Image
-                src={site.photo}
-                alt={dict.hero.photoAlt}
-                fill
-                loading="eager"
-                sizes="(min-width: 64rem) 16rem, (min-width: 40rem) 9rem, 7rem"
-                className="rounded-full object-cover"
-              />
+            <div className={`${styles.portrait} order-first mt-6 -translate-x-1.5 justify-self-center lg:order-none lg:translate-x-0 lg:mt-0 lg:mr-2.5 lg:justify-self-auto`}>
+              <Image src={site.photo} alt={dict.hero.photoAlt} fill loading="eager" sizes="(min-width: 64rem) 16rem, min(62vw, 16rem)" className="rounded-full object-cover" />
             </div>
           </div>
           <p className="mt-8 mb-0 max-w-[60ch] text-lg sm:text-xl">

@@ -33,18 +33,12 @@
 /* Portrait: a chip-like circle with a sun ring and a hard navy offset. */
 .portrait {
   position: relative;
-  width: 7rem;
+  width: min(62vw, 16rem);
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow:
-    0 0 0 6px #ffd23f,
-    8px 8px 0 6px #10123a;
-}
-
-@media (min-width: 40rem) {
-  .portrait {
-    width: 9rem;
-  }
+    0 0 0 8px #ffd23f,
+    12px 12px 0 8px #10123a;
 }
 
 @media (min-width: 64rem) {
