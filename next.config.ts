@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,
+  experimental: {
+    // The root layout sits under app/[lang], so unmatched URLs need a standalone 404.
+    globalNotFound: true,
+  },
   turbopack: {
     rules: {
       "*.css": {

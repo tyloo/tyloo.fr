@@ -1,0 +1,372 @@
+/* Hero name: sized from the measured advance width of "Bonvarlet" at each font-stretch, so it fills the line without overflowing. */
+.name {
+  margin: 0;
+  font-family: var(--font-anybody), sans-serif;
+  font-size: calc((100vw - 2.5rem) / 4.7);
+  font-weight: 900;
+  font-stretch: 75%;
+  line-height: 0.85;
+}
+
+@media (min-width: 40rem) {
+  .name {
+    font-size: calc((100vw - 4rem) / 6.1);
+    font-stretch: 100%;
+  }
+}
+
+@media (min-width: 48rem) {
+  .name {
+    font-size: calc((100vw - 4rem) / 7.5);
+    font-stretch: 125%;
+  }
+}
+
+@media (min-width: 64rem) {
+  .name {
+    font-size: min(11rem, calc((100vw - 4rem) / 9));
+    font-stretch: 150%;
+  }
+}
+
+/* Pink step numerals get a navy outline and offset so they keep contrast on lilac. */
+.numeral {
+  color: #ff5470;
+  -webkit-text-stroke: 4px #10123a;
+  text-shadow: 4px 4px 0 #10123a;
+  paint-order: stroke fill;
+}
+
+/* The hand: a scroll-snap row on small screens, a fan from 64rem. */
+.hand {
+  --card-w: 15rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1.75rem 1.25rem 2.5rem;
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1.25rem;
+}
+
+.slot {
+  position: relative;
+  z-index: calc(var(--i) + 1);
+  flex: none;
+  width: var(--card-w);
+  aspect-ratio: 5 / 7;
+  scroll-snap-align: center;
+  rotate: calc(var(--o) * 1deg);
+  transition: rotate 300ms ease;
+}
+
+.slot:hover,
+.slot:focus-within {
+  z-index: 30;
+}
+
+.slot[data-flipped="true"] {
+  z-index: 20;
+  rotate: 0deg;
+}
+
+.deal,
+.lift,
+.flipper {
+  position: absolute;
+  inset: 0;
+}
+
+.deal {
+  --deal-x: 80vw;
+  --deal-y: -2rem;
+  --deal-r: 18deg;
+  animation: deal 640ms cubic-bezier(0.2, 0.8, 0.25, 1) both;
+  animation-delay: calc(200ms + var(--i) * 110ms);
+}
+
+.lift {
+  perspective: 1400px;
+  transition: translate 200ms ease;
+}
+
+@media (hover: hover) {
+  .slot:hover .lift {
+    translate: 0 -0.75rem;
+  }
+}
+
+.slot:focus-within .lift,
+.slot[data-flipped="true"] .lift {
+  translate: 0 -0.75rem;
+}
+
+.flipper {
+  transform-style: preserve-3d;
+  transition: transform 520ms cubic-bezier(0.3, 0.7, 0.3, 1);
+}
+
+.slot[data-flipped="true"] .flipper {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 2px solid #10123a;
+  border-radius: 12px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--card-w) * 0.055);
+  color: #10123a;
+  background: #fff;
+  box-shadow: 6px 6px 0 #10123a;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  font-family: var(--font-anybody), sans-serif;
+  font-size: calc(var(--card-w) * 0.12);
+  font-weight: 800;
+  font-stretch: 100%;
+  line-height: 1;
+}
+
+.index svg {
+  width: 0.7em;
+  height: 0.7em;
+  margin-top: 0.1em;
+}
+
+.indexBottom {
+  align-self: flex-end;
+  rotate: 180deg;
+}
+
+.centre {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: calc(var(--card-w) * 0.05);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pip {
+  position: relative;
+  width: calc(var(--card-w) * 0.36);
+  aspect-ratio: 1;
+}
+
+.pipAce {
+  width: calc(var(--card-w) * 0.48);
+}
+
+.pip svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pip svg:first-child {
+  color: #ff5470;
+  translate: 6% 6%;
+}
+
+.pip svg:last-child {
+  color: #10123a;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-anybody), sans-serif;
+  font-size: calc(var(--card-w) * 0.076);
+  font-weight: 800;
+  font-stretch: 100%;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.back {
+  padding: calc(var(--card-w) * 0.045);
+  background-color: #10123a;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%231F3BEA' transform='translate(1 1) scale(.42)' d='M12 1.5c-1.6 2.6-4.3 4.8-6.6 6.9C3.6 10 2.5 11.8 2.5 13.8c0 2.8 2.2 4.9 4.9 4.9 1.5 0 2.8-.6 3.6-1.6-.3 2.2-1.2 3.9-2.8 5.4h7.6c-1.6-1.5-2.5-3.2-2.8-5.4.8 1 2.1 1.6 3.6 1.6 2.7 0 4.9-2.1 4.9-4.9 0-2-1.1-3.8-2.9-5.4C16.3 6.3 13.6 4.1 12 1.5Z'/><path fill='%23FF5470' transform='translate(13 13) scale(.42)' d='M12 1.5c-1.6 2.6-4.3 4.8-6.6 6.9C3.6 10 2.5 11.8 2.5 13.8c0 2.8 2.2 4.9 4.9 4.9 1.5 0 2.8-.6 3.6-1.6-.3 2.2-1.2 3.9-2.8 5.4h7.6c-1.6-1.5-2.5-3.2-2.8-5.4.8 1 2.1 1.6 3.6 1.6 2.7 0 4.9-2.1 4.9-4.9 0-2-1.1-3.8-2.9-5.4C16.3 6.3 13.6 4.1 12 1.5Z'/></svg>");
+  background-size: 22px 22px;
+  box-shadow: 6px 6px 0 #ff5470;
+  transform: rotateY(180deg);
+}
+
+.backInner {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--card-w) * 0.04);
+  height: 100%;
+  padding: calc(var(--card-w) * 0.06);
+  font-size: calc(var(--card-w) * 0.064);
+  line-height: 1.4;
+  color: #fff;
+  background: #10123a;
+  border: 2px solid #ff5470;
+  border-radius: 6px;
+}
+
+.backTitle {
+  margin: 0;
+  font-family: var(--font-anybody), sans-serif;
+  font-size: calc(var(--card-w) * 0.068);
+  font-weight: 800;
+  font-stretch: 100%;
+  line-height: 1.15;
+}
+
+.backLabel {
+  margin: auto 0 0;
+  font-size: calc(var(--card-w) * 0.056);
+  font-weight: 700;
+  color: #ff5470;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  padding: 0;
+  margin: 0;
+  font-size: calc(var(--card-w) * 0.055);
+  font-weight: 600;
+  line-height: 1.2;
+  list-style: none;
+}
+
+.stack li {
+  padding: 0.25em 0.5em;
+  color: #10123a;
+  background: #ffd23f;
+}
+
+.hit {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+}
+
+.hit:focus-visible {
+  outline: 3px solid #ffd23f;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 8px #10123a;
+}
+
+@media (min-width: 64rem) {
+  .hand {
+    --card-w: 12.5rem;
+    gap: 0;
+    justify-content: center;
+    padding: 1.75rem 0 3.5rem;
+    overflow: visible;
+  }
+
+  .slot {
+    scroll-snap-align: none;
+    transform-origin: 50% 140%;
+    rotate: calc(var(--o) * 5deg);
+  }
+
+  .slot + .slot {
+    margin-left: calc(var(--card-w) * -0.22);
+  }
+
+  /* Keep the pip and title clear of the next card in the fan. */
+  .slot:not(:last-child) .centre {
+    padding-right: calc(var(--card-w) * 0.2);
+  }
+
+  .deal {
+    --deal-x: calc(38vw - var(--o) * var(--card-w) * 0.72);
+    --deal-y: -70vh;
+    --deal-r: -28deg;
+  }
+}
+
+@media (min-width: 64rem) and (hover: hover) {
+  .slot:hover .lift {
+    translate: 0 -1.25rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .hand {
+    --card-w: 14rem;
+  }
+}
+
+@keyframes deal {
+  from {
+    opacity: 0;
+    rotate: var(--deal-r);
+    translate: var(--deal-x) var(--deal-y);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    rotate: 0deg;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deal {
+    animation: none;
+  }
+
+  .slot,
+  .lift,
+  .flipper {
+    transition: none;
+  }
+}
+
+/* A poker chip: coloured disc with white edge spots and a white inlay. */
+.chip {
+  --chip-size: 8.5rem;
+  display: grid;
+  place-items: center;
+  width: var(--chip-size);
+  aspect-ratio: 1;
+  background: var(--chip-color);
+  border: calc(var(--chip-size) * 0.09) dashed #fff;
+  border-radius: 50%;
+  box-shadow: 5px 5px 0 #10123a;
+}
+
+.chipInlay {
+  display: grid;
+  place-items: center;
+  width: 74%;
+  aspect-ratio: 1;
+  color: #10123a;
+  background: #fff;
+  border: 2px dashed var(--chip-color);
+  border-radius: 50%;
+}

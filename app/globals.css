@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-cobalt: #1f3bea;
+  --color-paper: #f3f2ff;
+  --color-pink: #ff5470;
+  --color-sun: #ffd23f;
+  --color-ink: #10123a;
+  --font-display: var(--font-anybody), sans-serif;
+  --font-sans: var(--font-figtree), sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,13 +17,5 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
   }
 }
